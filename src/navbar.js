@@ -30,7 +30,7 @@ const Navbar = () => {
                 <div className="navbar-start">
                     <NavLink to="/" className="navbar-item"><span style={{ color: 'black' }}>Home</span></NavLink>
                     <NavLink to="/about" className="navbar-item"><span style={{ color: 'black' }}>About</span></NavLink>
-                    <div className={`navbar-item has-dropdown ${isActive ? 'is-active' : ''}`}>
+                    <div className={`navbar-item has-dropdown is-hoverable ${isActive ? 'is-active' : ''}`}>
                         <a className="navbar-link" style={{ color: 'black' }}>Tools</a>
                         <div className="navbar-dropdown">
                             <NavLink to="/p2d" className="navbar-item">PDF to Word</NavLink>
