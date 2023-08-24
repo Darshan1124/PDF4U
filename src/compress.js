@@ -70,7 +70,7 @@ function Compress() {
             className={`compress-container ${scrolling ? 'scrolling' : ''}`}
         >
             <h2 className="compress-title">PDF Compressor</h2>
-            <input type="file" accept=".pdf" onChange={handlefilechange} />
+            <input type="file" onChange={handlefilechange} />
             <button
                 className={`compress-button ${scrolling ? 'scrolling' : ''}`}
                 onClick={converttoword}
