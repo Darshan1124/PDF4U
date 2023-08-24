@@ -1,21 +1,37 @@
-import React from 'react';
-import 'bulma/css/bulma.min.css'; // Import Bulma CSS
-import './Navbar.css'; // Import custom CSS
+import React, { useState } from 'react';
+import 'bulma/css/bulma.min.css';
+import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
+    const [isActive, setIsActive] = useState(false);
+
+    const toggleNavbar = () => {
+        setIsActive(!isActive);
+    };
+
     return (
         <nav className="navbar is-transparent" role="navigation" aria-label="main navigation">
             <div className="navbar-brand">
-                {/* <span className="navbar-item">PDF4U</span> */}
-                <NavLink to="/" className="navbar-item"><span color='#333333'>PDF<span style={{fontSize:'35px',color:'white'}}>4</span>U</span></NavLink>
+                <NavLink to="/" className="navbar-item"><span style={{ color: 'black' }}>PDF<span style={{ fontSize: '35px', color: 'white' }}>4</span>U</span></NavLink>
+                <a
+                    role="button"
+                    className={`navbar-burger burger ${isActive ? 'is-active' : ''}`}
+                    aria-label="menu"
+                    aria-expanded="false"
+                    onClick={toggleNavbar}
+                >
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
             </div>
-            <div id="navbarBasicExample" className="navbar-menu">
+            <div className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
                 <div className="navbar-start">
-                    {/* <a href="/" className="navbar-item">Home</a> */}
-                    <NavLink to="/" className="navbar-item"><span style={{color:'white'}}>Home</span></NavLink>
-                    <div className="navbar-item has-dropdown is-hoverable">
-                        <a className="navbar-link">Tools</a>
+                    <NavLink to="/" className="navbar-item"><span style={{ color: 'black' }}>Home</span></NavLink>
+                    <NavLink to="/about" className="navbar-item"><span style={{ color: 'black' }}>About</span></NavLink>
+                    <div className={`navbar-item has-dropdown ${isActive ? 'is-active' : ''}`}>
+                        <a className="navbar-link" style={{ color: 'black' }}>Tools</a>
                         <div className="navbar-dropdown">
                             <NavLink to="/p2d" className="navbar-item">PDF to Word</NavLink>
                             <NavLink to="/d2p" className="navbar-item">Word to PDF</NavLink>
@@ -28,7 +44,8 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className="navbar-end">
-                    {/* You can add more navbar items here if needed */}
+                    
+                    {/* Add other navbar items here */}
                 </div>
             </div>
         </nav>
