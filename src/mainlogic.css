@@ -1,6 +1,7 @@
+/* mainlogic.css */
 
-
-.compress-container {
+/* Apply styles only to elements with class "converter-container" */
+.converter-container {
   position: relative;
   height: 100vh;
   display: flex;
@@ -13,28 +14,49 @@
   background-image: linear-gradient(120deg, #1abc9c, #3498db);
 }
 
-.compress-container.fade-in {
+/* Add a fade-in effect when the component first appears */
+.converter-container.fade-in {
   animation: fadeIn 1s ease;
 }
 
 @keyframes fadeIn {
   from {
-    opacity: 0;
+      opacity: 0;
   }
   to {
-    opacity: 1;
+      opacity: 1;
   }
 }
 
-.compress-container.scrolling {
-  background-image: linear-gradient(120deg, #1abc9c, #3498db);
+/* Add styles to the drop area */
+.drop-area {
+  position: relative;
+  border: 2px dashed #ffffff;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  padding: 10px;
 }
 
-.compress-title {
+.drop-area:hover {
+  border-color: #1abc9c;
+}
+
+/* Apply styles only to elements with class "converter-title" */
+.converter-title {
   color: #ffffff;
 }
 
-.compress-button {
+/* Apply styles only to elements with class "converter-button" */
+.converter-button {
   background-color: #3498db;
   color: #ffffff;
   border: 2px solid #2980b9;
@@ -45,11 +67,11 @@
   transition: background-color 0.3s ease;
 }
 
-.compress-button:hover {
+.converter-button:hover {
   background-color: #2980b9;
 }
 
-.compressed-file {
+.converted-file {
   margin-top: 20px;
   color: #ffffff;
   display: flex;
@@ -57,6 +79,7 @@
   align-items: center;
 }
 
+/* Apply styles only to elements with class "download-link" */
 .download-link {
   display: inline-block;
   background-color: #27ae60;
@@ -70,4 +93,4 @@
 
 .download-link:hover {
   background-color: #219d49;
-} 
+}

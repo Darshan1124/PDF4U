@@ -1,0 +1,111 @@
+/* mainlogic.css */
+
+/* Apply styles only to elements with class "converter-container" */
+.converter-container {
+  position: relative; /* Set position to make the drop area container relative for absolute positioning of drop-area */
+  height: 100vh; /* Set height to 100% of viewport height */
+  display: flex; /* Center content vertically and horizontally */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-image: linear-gradient(120deg, #1abc9c, #3498db);
+}
+/* Add a fade-in effect when the component first appears */
+.converter-container.fade-in {
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Change styles when scrolling */
+.converter-container.scrolling {
+  background-image: linear-gradient(120deg, #1abc9c, #3498db);
+}
+
+.converter-title.scrolling {
+  color: #ffffff;
+  margin: 50px; /* White text color when scrolling */
+}
+
+/* Add styles to the drop area */
+.drop-area {
+  position: relative;
+  /* top: 20%;
+  left: 20%;
+  right: 20%;
+  bottom: 20%; */
+  border: 2px dashed #ffffff;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2px); /* Apply blur effect to the background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+  padding: 10px;
+}
+
+.drop-area:hover {
+  border-color: #1abc9c;
+}
+
+/* Apply styles only to elements with class "converter-title" */
+.converter-title {
+  color: #ffffff; /* White text color */
+}
+
+/* Apply styles only to elements with class "converter-button" */
+.converter-button {
+background-color: #3498db; /* Change the background color to a subtle blue */
+color: #ffffff; /* White text color */
+border: 2px solid #2980b9; /* Add a 2px solid border with a darker blue color */
+padding: 10px 20px;
+border-radius: 4px;
+cursor: pointer;
+margin-top: 50px;
+transition: background-color 0.3s ease;
+}
+
+.converter-button:hover {
+background-color: #2980b9; /* Darker blue on hover */
+}
+
+
+.converted-file {
+margin-top: 20px;
+color: #ffffff; /* White text color */
+display: flex; /* Use flexbox to center the content */
+flex-direction: column; /* Stack elements vertically */
+align-items: center; /* Center content horizontally */
+}
+
+/* Apply styles only to elements with class "download-link" */
+.download-link {
+display: inline-block;
+background-color: #27ae60; /* Change the background color to a shade of green */
+color: #ffffff; /* White text color */
+padding: 10px 20px;
+border-radius: 4px;
+text-decoration: none;
+margin-top: 10px;
+transition: background-color 0.3s ease;
+}
+
+.download-link:hover {
+background-color: #219d49; /* Darker green on hover */
+}
+

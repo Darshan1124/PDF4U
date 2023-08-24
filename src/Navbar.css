@@ -1,0 +1,51 @@
+/* Navbar.css */
+/* Custom styles for the navbar */
+
+.navbar {
+    margin-bottom: 1rem; /* Add some spacing at the bottom */
+    background-color: transparent; /* Make the background invisible */
+    position: fixed; /* Fix the position of the navbar */
+    width: 100%; /* Set the navbar width to 100% */
+    z-index: 1000; /* Ensure the navbar appears above other components */
+  }
+  
+  .navbar-brand .navbar-item {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .navbar-item {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-link {
+    color: white;
+  }
+  
+  .navbar-link:hover {
+    color: #f0f0f0; /* Lighten the color on hover */
+  }
+  
+  /* Adjust the color and visibility of the dropdown trigger text */
+  .navbar-dropdown .navbar-link {
+    color: #333; /* Darken the text color for the trigger */
+  }
+  
+  /* Ensure dropdown trigger text is visible */
+  .navbar-dropdown .navbar-link:hover {
+    color: #333; /* Keep text color dark on hover */
+  }
+  
+  .navbar-dropdown {
+    background-color: #f0f0f0; /* Set background color of dropdown */
+  }
+  
+  .navbar-dropdown a.navbar-item {
+    color: #333; /* Darken the text color */
+  }
+  
+  .navbar-dropdown a.navbar-item:hover {
+    background-color: #ddd; /* Change background color on hover */
+    color: #222; /* Darken text color on hover */
+  }
+  

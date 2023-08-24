@@ -1,0 +1,107 @@
+/* Apply styles only to elements with class "ex2pdf-container" */
+.ex2pdf-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(120deg, #1abc9c, #3498db);
+  }
+  
+  /* Add a fade-in effect when the component first appears */
+  .ex2pdf-container.fade-in {
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Change styles when scrolling */
+  .ex2pdf-container.scrolling {
+    background-image: linear-gradient(120deg, #1abc9c, #3498db);
+  }
+  
+  /* Apply styles only to elements with class "ex2pdf-title" */
+  .ex2pdf-title {
+    color: #ffffff;
+  }
+  
+  /* Apply styles only to elements with class "ex2pdf-form" */
+  .ex2pdf-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  /* Apply styles only to elements with class "ex2pdf-error" */
+  .ex2pdf-error {
+    color: red;
+    margin-top: 10px;
+  }
+  
+  /* Apply styles only to elements with class "ex2pdf-button" */
+  .ex2pdf-button {
+    background-color: #3498db;
+    color: #ffffff;
+    border: 2px solid #2980b9;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ex2pdf-button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Apply styles only to elements with class "ex2pdf-file-input" */
+  .ex2pdf-file-input {
+    padding: 10px;
+    border: 1px solid #3498db;
+    border-radius: 4px;
+    margin-top: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .ex2pdf-file-input:focus {
+    box-shadow: 0 0 8px #3498db;
+  }
+  
+  /* Apply styles only to elements with class "ex2pdf-drop-area" */
+  .ex2pdf-drop-area {
+    border: 2px dashed #ffffff;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  .ex2pdf-drop-area:hover {
+    border-color: #1abc9c;
+  }
+  
+  /* Apply styles only to elements with class "ex2pdf-dragging" */
+  .ex2pdf-dragging {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  

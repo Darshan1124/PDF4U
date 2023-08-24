@@ -1,0 +1,79 @@
+/* Apply styles only to elements with class "compress-container" */
+.compress-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(120deg, #1abc9c, #3498db);
+  }
+  
+  /* Add a fade-in effect when the component first appears */
+  .compress-container.fade-in {
+    animation: fadeIn 1s ease;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Change styles when scrolling */
+  .compress-container.scrolling {
+    background-image: linear-gradient(120deg, #1abc9c, #3498db);
+  }
+  
+  /* Apply styles only to elements with class "compress-title" */
+  .compress-title {
+    color: #ffffff;
+  }
+  
+  /* Apply styles only to elements with class "compress-button" */
+  .compress-button {
+    background-color: #3498db;
+    color: #ffffff;
+    border: 2px solid #2980b9;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 50px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .compress-button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Apply styles only to elements with class "compressed-file" */
+  .compressed-file {
+    margin-top: 20px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Apply styles only to elements with class "download-link" */
+  .download-link {
+    display: inline-block;
+    background-color: #27ae60;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .download-link:hover {
+    background-color: #219d49;
+  }
+  

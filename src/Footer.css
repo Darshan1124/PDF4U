@@ -1,0 +1,20 @@
+/* Footer.css */
+/* Custom styles for the footer */
+
+.footer {
+    background-color: #333; /* Dark background color */
+    padding: 2rem 0;
+    color: #fff; /* Light text color */
+  }
+  
+  .footer-icon {
+    color: #fff; /* Light color for icons */
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+  
+  .footer-icon:hover {
+    color: #64B5F6; /* Light blue icon color on hover */
+  }
+  
