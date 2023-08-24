@@ -90,8 +90,7 @@ function FileUploader() {
                     )}
                 </div>
                 <input
-                    type="file"
-                    accept=".pdf"
+                    type="file"       
                     onChange={handlefilechange}
                     className="file-input"
                     style={{ display: 'none' }}
