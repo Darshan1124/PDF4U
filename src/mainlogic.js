@@ -86,7 +86,6 @@ function Mainlogic() {
                 </div>
                 <input
                     type="file"
-                    accept=".pdf"
                     onChange={handlefilechange}
                     className="file-input"
                     style={{ display: 'none' }}
