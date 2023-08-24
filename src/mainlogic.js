@@ -1,11 +1,10 @@
-// mainlogic.jsx
-
+// FileUploader.jsx
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import './mainlogic.css';
+import './fileuploader.css';
 import Navbar from './navbar';
-import Footer from './footer';
 
-function Mainlogic() {
+function FileUploader() {
     const [selectedfile, setSelectedfile] = useState(null);
     const [convertedfile, setConvertedfile] = useState(null);
     const [scrolling, setScrolling] = useState(false);
@@ -28,6 +27,7 @@ function Mainlogic() {
         setScrolling(true);
     };
 
+
     const handlefilechange = (event) => {
         setSelectedfile(event.target.files[0]);
     };
@@ -48,22 +48,27 @@ function Mainlogic() {
         formdata.append('file', selectedfile);
 
         try {
-            const response = await fetch('https://flaskend.onrender.com/convert', {
-                method: 'POST',
-                body: formdata,
+            const response = await axios.post('https://flaskend.onrender.com/convertd2p', formdata, {
+                headers: { 'Content-Type': 'multipart/form-data' },
+                responseType: 'blob', // to receive binary data
             });
 
-            if (response.ok) {
-                const convertedfileBlob = await response.blob();
-                const convertedfileUrl = URL.createObjectURL(convertedfileBlob);
-                setConvertedfile(convertedfileUrl);
-            } else {
-                alert('Failed to convert.');
-            }
+            const blob = new Blob([response.data], { type: 'application/pdf' });
+            setConvertedfile(blob);
         } catch (error) {
             alert('An error occurred during converting.');
             console.log(error);
         }
+    };
+
+    const handleDownload = () => {
+        const url = URL.createObjectURL(convertedfile);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', 'converted.pdf');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     return (
@@ -76,12 +81,12 @@ function Mainlogic() {
             >
                 <h2 className='title'
                 // className={`converter-title ${scrolling ? 'scrolling' : ''}`}
-                >PDF to WORD converter</h2>
+                >WORD to PDF converter</h2>
                 <div className="drop-area">
                     {selectedfile ? (
                         <p>Selected File: {selectedfile.name}</p>
                     ) : (
-                        <p>Drag and drop a PDF file here, or click to select a file.</p>
+                        <p>Drag and drop a WORD file here, or click to select a file.</p>
                     )}
                 </div>
                 <input
@@ -103,15 +108,15 @@ function Mainlogic() {
                 {convertedfile && (
                     <div className="converted-file">
                         <h3>Converted Word file</h3>
-                        <a className="download-link" href={convertedfile} download="convertedfile.docx">
-                            Download
-                        </a>
+                        {/* <a className="download-link" href={convertedfile} download="convertedfile.docx">
+                        Download
+                    </a> */}
+                        <button onClick={handleDownload} className="download-link">Download</button>
                     </div>
                 )}
             </div>
-            <Footer />
         </div>
     );
 }
 
-export default Mainlogic;
+export default FileUploader;
