@@ -68,43 +68,49 @@ function Mainlogic() {
 
     return (
         <div>
-            <Navbar/>
-        <div
-            className={`converter-container ${scrolling ? 'scrolling' : ''}`}
-            onDrop={handleDrop}
-            onDragOver={(event) => event.preventDefault()}
-        >
-            <h2 className='title'
-            // className={`converter-title ${scrolling ? 'scrolling' : ''}`}
-            >PDF to WORD converter</h2>
-            <div className="drop-area">
-                {selectedfile ? (
-                    <p>Selected File: {selectedfile.name}</p>
-                ) : (
-                    <p>Drag and drop a PDF file here, or click to select a file.</p>
+            <Navbar />
+            <div
+                className={`converter-container ${scrolling ? 'scrolling' : ''}`}
+                onDrop={handleDrop}
+                onDragOver={(event) => event.preventDefault()}
+            >
+                <h2 className='title'
+                // className={`converter-title ${scrolling ? 'scrolling' : ''}`}
+                >PDF to WORD converter</h2>
+                <div className="drop-area">
+                    {selectedfile ? (
+                        <p>Selected File: {selectedfile.name}</p>
+                    ) : (
+                        <p>Drag and drop a PDF file here, or click to select a file.</p>
+                    )}
+                </div>
+                <input
+                    type="file"
+                    accept=".pdf"
+                    onChange={handlefilechange}
+                    className="file-input"
+                    style={{ display: 'none' }}
+                />
+                <button className="converter-button" onClick={() => document.querySelector('.file-input').click()}>
+                    Select File
+                </button>
+                {selectedfile && (
+                    <div>
+                        <button className="converter-button" onClick={converttoword}>
+                            Convert to Word
+                        </button>
+                    </div>
+                )}
+                {convertedfile && (
+                    <div className="converted-file">
+                        <h3>Converted Word file</h3>
+                        <a className="download-link" href={convertedfile} download="convertedfile.docx">
+                            Download
+                        </a>
+                    </div>
                 )}
             </div>
-            {/* <input type="file" accept=".pdf" onChange={handlefilechange} className='file-input'/> */}
-            <button className="converter-button" onClick={() => document.querySelector('input[type=file]').click()}>
-                Select File
-            </button>
-            {selectedfile && (
-                <div>
-                    <button className="converter-button" onClick={converttoword}>
-                        Convert to Word
-                    </button>
-                </div>
-            )}
-            {convertedfile && (
-                <div className="converted-file">
-                    <h3>Converted Word file</h3>
-                    <a className="download-link" href={convertedfile} download="convertedfile.docx">
-                        Download
-                    </a>
-                </div>
-            )}
-        </div>
-        <Footer/>
+            <Footer />
         </div>
     );
 }
