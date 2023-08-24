@@ -114,7 +114,6 @@ function Split() {
                 <input
                     type="file"
                     id="file"
-                    accept=".pdf"
                     onChange={handleChange}
                     required
                 />
